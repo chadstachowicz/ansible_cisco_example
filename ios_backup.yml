@@ -1,0 +1,12 @@
+---
+- hosts: lab-cube
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+   - name: SHOW VERSION
+     register: result
+     ios_command:
+       commands: show version
+   
+   - copy: content="{{ result | to_nice_json }}" dest="~/out/{{inventory_hostname}}_iosfacts.json"

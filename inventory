@@ -1,0 +1,10 @@
+[IOS]
+lab-cube ansible_host=172.16.53.6
+
+[IOS:vars]
+ansible_network_os=ios
+ansible_become=yes
+ansible_become_method=enable
+ansible_user=ssh_username
+ansible_password=ssh_password
+ansible_become_pass=enable_pass
